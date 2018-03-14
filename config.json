@@ -2,7 +2,7 @@
 	"rethinkdb": {
 		"host": "https://aws-us-east-1-portal.28.dblayer.com:27661",
 		"port": 28015,
-		"authKey": "",
+		"authKey": "admin:ce989890d03a972751d871f2b1e51047@aws-us-east-1-portal.28.dblayer.com:27661",
 		"db": "test",
 		"table":"list",
 		"tableIndex":"createdAt"
