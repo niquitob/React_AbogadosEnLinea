@@ -121,7 +121,8 @@ section {
     font-size: xx-small;
 }
 .descripcionPregunta{
-    background-color: rgb(234, 235, 237)
+    background-color: rgb(234, 235, 237);
+    padding-left: 6px;
 }
 
 .menuTop{
