@@ -1,0 +1,143 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+
+header {
+ 
+  background-image: url('/Images/HeaderBg.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-bottom: 10px solid black;
+  padding-top: 15%;
+}
+
+
+
+section {
+  padding: 10px 0;
+}
+
+.sizing {
+    width: 15%;
+    height: 15%;
+    margin-right: 10%;
+}
+.sizing2 {
+    width: 40%;
+    height: 40%;
+}
+.whatsApp {
+    width: 20%;
+    height: 20%;
+}
+.menuImg:hover{
+    border-bottom: 2px solid rgb(223, 155, 49);
+}
+
+.MenuFont{
+    color: rgb(68, 66, 66);
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 10px;
+    border-bottom: 2px solid #f8f9fa;
+
+    
+}
+
+.MenuFont:hover{
+    color: rgb(68, 66, 66);
+    border-bottom: 2px solid rgb(223, 155, 49);
+    
+}
+
+.cartel1{
+    background-color:  rgb(223, 155, 49);
+    color: white;
+    font-weight: bold;
+    
+}
+
+.cartel2{
+    background-color:  rgb(223, 155, 49);
+    color: white;
+    height: 200px;
+    margin-top: 5%;
+    margin-right: 3%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    
+}
+
+.seccionChat{
+  background-image: url('/Images/FondoChat.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+  height: 400px;
+}
+
+.footer{
+    color: rgb(223, 155, 49);
+    background-color: rgb(68, 66, 66);
+}
+
+.Preguntas{
+  background-image: url('/Images/IconoFondo.png');
+  background-repeat: repeat;
+  padding-left: 8% !important;
+}
+
+.PreguntasHD{
+    color: rgb(223, 155, 49);
+    background-color: rgb(68, 66, 66);
+    text-align: center;
+}
+
+.panel-title{
+    color: rgb(68, 66, 66);
+    background-color: white;
+    border-bottom: 1px solid rgb(68, 66, 66);
+}
+
+.panel-title a{
+    color: rgb(68, 66, 66) !important;
+    text-decoration: none !important;
+    background-color: white;
+    border-bottom: 10px;
+    border-bottom-color: black;
+    font-size: small;
+}
+
+.logoPregunta{
+    width: 20%;
+    margin-right: 5px;
+    margin-top: 5px;
+    float: left;
+}
+
+.textoPregunta{
+    font-size: xx-small;
+}
+.descripcionPregunta{
+    background-color: rgb(234, 235, 237)
+}
+
+.menuTop{
+    
+}
+
+.CargarPreguntas{
+margin-top: 5%;
+margin-right: 10%;
+width: 80%;
+height: 100px;
+border-radius: 10px;
+
+}
+
+.BtnPreguntas{
+    margin-top: 10%;
+    margin-right: 40%;
+}

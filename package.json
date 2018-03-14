@@ -1,0 +1,21 @@
+{
+  "name": "AbogadosEnLinea",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Biglino, Nicolás",
+  "dependencies": {
+    "axios": "^0.16.1",
+    "body-parser": "*",
+    "express": "*",
+    "multer": "^1.2.0",
+    "rethinkdb": "*",
+    "serve-static": "*",
+    "socket.io": "*"
+    
+  },
+  "scripts": {
+    "build": "react-scripts build", 
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
