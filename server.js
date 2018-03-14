@@ -42,6 +42,7 @@ var io                  = require('socket.io')(server);
 //                RethinkDB
 // ******************************************
 var startServer         = function() {
+   console.log('COMENZANDO');
    server.listen(config.express.port);
    console.log('_____________________');
    console.log('HTTP service online');
@@ -49,6 +50,7 @@ var startServer         = function() {
    console.log('API service online');
 };
 var initializeRTDB      = function(conn) {
+   console.log('COMENZANDO_RTDB');      
    r.table(config.rethinkdb.table).indexWait('createdAt').run(conn)
    .then(function(result) {
       console.log("DB OK, starting express...");
