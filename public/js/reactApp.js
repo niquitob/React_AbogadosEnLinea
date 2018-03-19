@@ -25,10 +25,10 @@ var CargaPreguntas = React.createClass({
 
    componentDidMount: function componentDidMount() {
       sessionStorage.setItem('tipoUsuario', 'invitado');
-      
       if (!sessionStorage.getItem('usuario')) {
          this.crearUsuarioInvitado();
       }
+
       // startSocket();
       // instance = this;
       // downloadData();
@@ -64,7 +64,6 @@ var CargaPreguntas = React.createClass({
 
       //sessionStorage.setItem('myData', this.state.mostrarPregunta );
       //sessionStorage.getItem('myData');
-      
       if (sessionStorage.getItem('usuario') == "") {
          this.crearUsuarioInvitado();
       }
@@ -127,28 +126,53 @@ var PanelDePreguntas = React.createClass({
             { className: 'chat' },
             informacion.map(function (element) {
                if (element.mensaje) {
-                  return React.createElement(
-                     'li',
-                     { className: element.class },
-                     React.createElement(
-                        'div',
-                        { className: 'msg' },
+                  if (element.admin) {
+                     return React.createElement(
+                        'li',
+                        { className: element.class },
                         React.createElement(
-                           'p',
-                           null,
+                           'div',
+                           { className: 'msg' },
                            React.createElement(
-                              'b',
+                              'p',
                               null,
-                              element.usuario
+                              React.createElement(
+                                 'b',
+                                 null,
+                                 element.admin
+                              )
+                           ),
+                           React.createElement(
+                              'p',
+                              null,
+                              element.mensaje
                            )
-                        ),
-                        React.createElement(
-                           'p',
-                           null,
-                           element.mensaje
                         )
-                     )
-                  );
+                     );
+                  } else {
+                     return React.createElement(
+                        'li',
+                        { className: element.class },
+                        React.createElement(
+                           'div',
+                           { className: 'msg' },
+                           React.createElement(
+                              'p',
+                              null,
+                              React.createElement(
+                                 'b',
+                                 null,
+                                 element.usuario
+                              )
+                           ),
+                           React.createElement(
+                              'p',
+                              null,
+                              element.mensaje
+                           )
+                        )
+                     );
+                  }
                }
             })
          ),

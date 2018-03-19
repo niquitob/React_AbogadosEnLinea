@@ -13,6 +13,9 @@ header {
   padding-top: 15%;
 }
 
+textarea {
+   resize: none;
+}
 
 
 section {
@@ -141,4 +144,13 @@ border-radius: 10px;
 .BtnPreguntas{
     margin-top: 10%;
     margin-right: 40%;
+}
+.ControlRespuestas{
+    width: 100%;
+    height: 20%;
+    position: fixed;
+}
+.SelectUsuarios{
+    width: 200px;
+    height: 100%;
 }

@@ -8,7 +8,7 @@ var instance               = this;
 var downloadData           = function(){
    $.ajax({
       url      : '/api/list',
-      dataType : 'json',
+      type: 'post',
       data: { "usuario": sessionStorage.getItem('usuario') },
       success  : function(data) {
          instance.setState({simpleList: data});
@@ -25,7 +25,7 @@ var CargaPreguntas   = React.createClass({
     if (!sessionStorage.getItem('usuario')) {
          this.crearUsuarioInvitado();
       }
-       
+ 
      // startSocket();
      // instance = this;
      // downloadData();
@@ -33,6 +33,7 @@ var CargaPreguntas   = React.createClass({
      //    downloadData();
      // });
    },
+
    getInitialState   : function() {
       return {
       pregunta: "",
@@ -119,14 +120,24 @@ var PanelDePreguntas  = React.createClass({
          <ol className="chat">
             {informacion.map(function(element){
                if (element.mensaje){
+                 if(element.admin){
+                     return (
+                      <li className={element.class}>
+                        <div className="msg">
+                      <p><b>{element.admin}</b></p>
+                      <p>{element.mensaje}</p>
+                      </div>
+                      </li>);
+                 }else{
                      return (
                       <li className={element.class}>
                         <div className="msg">
                       <p><b>{element.usuario}</b></p>
                       <p>{element.mensaje}</p>
                       </div>
-                      </li>
-                     );
+                      </li>);
+
+                 }
                }
             })}
          </ol>
