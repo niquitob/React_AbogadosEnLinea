@@ -141,8 +141,95 @@ var PanelDePreguntas  = React.createClass({
                }
             })}
          </ol>
-            <p>{this.state.tipoUsuario}</p> 
+            <p>{this.state.tipoUsuario}</p>
         </div>                
+      );
+   }
+});
+
+var CargaPreguntasChat   = React.createClass({
+
+   componentDidMount : function() {
+     sessionStorage.setItem('tipoUsuario', 'invitado' );
+    if (!sessionStorage.getItem('usuario')) {
+         this.crearUsuarioInvitado();
+      }
+ 
+     // startSocket();
+     // instance = this;
+     // downloadData();
+     // socket.on('change', function (data) {
+     //    downloadData();
+     // });
+   },
+
+   getInitialState   : function() {
+      return {
+      pregunta: "",
+      usuario: ""
+      };
+   },
+
+  actualizarPregunta(evt) {
+      this.setState({pregunta:evt.target.value});    
+  },
+  actualizarUsuario(evt) {
+      this.setState({usuario:evt.target.value});    
+  },
+  crearUsuarioInvitado(){
+      sessionStorage.setItem('usuario', "Invitado"+Math.floor((Math.random() * 100) + 1) );
+      
+        $.ajax({
+                    url   : "/api/addUsuario",
+                    type  : "post",
+                    data  : {"usuario": sessionStorage.getItem('usuario'), "tipoUsuario": "invitado", "estaActivo": "si"}
+                });
+        
+  },
+  realizarPregunta() {
+      //this.setState({mostrarPregunta:mostrarPregunta + '<br/>' + pregunta});
+     // this.setState({mostrarPregunta:this.state.mostrarPregunta + '\n\n' + this.state.pregunta});
+      
+      //sessionStorage.setItem('myData', this.state.mostrarPregunta );
+      //sessionStorage.getItem('myData');
+      if(sessionStorage.getItem('usuario')==""){
+          this.crearUsuarioInvitado();
+      }
+
+      if(sessionStorage.getItem('tipoUsuario') == "invitado"){
+        $.ajax({
+                    url   : "/api/add",
+                    type  : "post",
+                    data  : {"mensaje": this.state.pregunta, "usuario": sessionStorage.getItem('usuario'), "class": "other"}
+                });
+      }else
+      {
+        $.ajax({
+                    url   : "/api/add",
+                    type  : "post",
+                    data  : {"mensaje": this.state.pregunta, "usuario": sessionStorage.getItem('usuario'), "class": "self"}
+                });
+
+      }
+      this.setState({pregunta:""});
+      downloadData();
+  },
+   render            : function(){
+        var estilo1 = {
+        width:'90%'
+        };
+        var estilo2 = {
+        width: '4%',
+        padding: '0 10px 0 0'
+        };
+      return (
+         <div>
+
+            <input style={estilo1} type="text" value={this.state.pregunta}  onChange={ this.actualizarPregunta }  />
+            <input type="image" src="Images/Enviar.png" style={estilo2} onClick={ this.realizarPregunta } /> 
+
+         </div>
+
       );
    }
 });
@@ -153,4 +240,8 @@ React.render(
 React.render(
    <PanelDePreguntas  />,
    document.getElementById('tablero')
+)
+React.render(
+   <CargaPreguntasChat />,
+   document.getElementById('formularioChat')
 )

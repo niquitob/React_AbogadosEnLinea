@@ -161,11 +161,14 @@ a{
 .self {
     justify-content: flex-end;
     align-items: flex-end;
+     
 }
 .self .msg {
     order: 1;
-    border-bottom-right-radius: 0px;
+    border-radius: 5px;
     box-shadow: 1px 2px 0px #D4D4D4;
+    background: #dcf8c6;
+
 }
 .self .avatar {
     order: 2;
@@ -188,7 +191,7 @@ a{
     background: white;
     min-width: 50px;
     padding: 10px;
-    border-radius: 2px;
+    border-radius: 10px;
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.07);
 }
 .msg p {
@@ -334,3 +337,4 @@ input.textarea {
 .emojis:active {
     opacity: 0.9;
 }
+

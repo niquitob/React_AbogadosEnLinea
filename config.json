@@ -5,6 +5,7 @@
 		"authKey": "",
 		"db": "test",
 		"table":"list",
+		"timeout":30,
 		"tableIndex":"createdAt"
 	},
 	"express": {

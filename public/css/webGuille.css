@@ -79,6 +79,8 @@ section {
   background-repeat: no-repeat;
   overflow-y: scroll;
   height: 400px;
+  padding-right: 0px !important;
+  margin-right: 0px !important;
 }
 
 .footer{

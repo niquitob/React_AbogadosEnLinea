@@ -1,6 +1,5 @@
 
 "use strict";
-
 var socket = null;
 var startSocket = function startSocket() {
   socket = io(window.location.hostname);
@@ -144,12 +143,15 @@ var PanelDePreguntas = React.createClass({
     instanceConv = this;
     downloadData();
     var tablero = this.state.conversacion;
+    var styleOv = {
+      overflow: 'scroll'
+    };
     return React.createElement(
       'div',
       null,
       React.createElement(
         'div',
-        null,
+        { style: styleOv },
         React.createElement(
           'ol',
           { className: 'chat' },

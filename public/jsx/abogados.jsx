@@ -128,9 +128,12 @@ var PanelDePreguntas  = React.createClass({
      instanceConv=this;
      downloadData();
       var tablero = this.state.conversacion;
+      var styleOv = {
+        overflow: 'scroll'
+      };
       return (
         <div>
-        <div>
+        <div style={styleOv}>
          <ol className="chat">
             {tablero.map(function(element){
                if (element.mensaje){
