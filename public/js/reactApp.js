@@ -8,7 +8,7 @@ var startSocket = function startSocket() {
 var instance = undefined;
 var downloadData = function downloadData() {
    $.ajax({
-      url: '/api/list',
+      url: 'http://abogadosenlinea.azurewebsites.net/users',
       type: 'post',
       data: { "usuario": sessionStorage.getItem('usuario') },
       success: function (data) {
