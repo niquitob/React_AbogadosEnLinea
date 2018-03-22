@@ -77,6 +77,7 @@ var initializeRTDB      = function(conn) {
       });
    });
 };
+console.log('Conectando...');
 r.connect(config.rethinkdb)
 .then(function(conn) {
    console.log('_____________________');
@@ -89,10 +90,7 @@ r.connect(config.rethinkdb)
          initializeRTDB(conn);
       } else {
          console.log("The DB doesn't exist.");
-         console.log("Initializing DB "+config.rethinkdb.db);
-         r.dbCreate(config.rethinkdb.db).run(conn)
-            .then(initializeRTDB(conn))
-      }
+     }
    })
 })
 .error(function(error){

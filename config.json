@@ -1,12 +1,17 @@
 {
 	"rethinkdb": {
-		"host": "127.0.0.1",
-		"port": 28015,
-		"authKey": "",
+		"host": "aws-us-east-1-portal.28.dblayer.com",
+		"port": 27661,
+		"user": "admin",
+		"password":"ce989890d03a972751d871f2b1e51047",
+		"timeout":30,
+		"tableIndex":"createdAt",
+		"discovery": false,
 		"db": "test",
 		"table":"list",
-		"timeout":30,
-		"tableIndex":"createdAt"
+		"ssl":{
+			"rejectUnauthorized":false
+		}
 	},
 	"express": {
 		"port": 80

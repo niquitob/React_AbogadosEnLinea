@@ -65,26 +65,9 @@ var ListadoUsuario   = React.createClass({
       var listUs =   users.map(function(element){
         if (element.usuario){
         return (
-          
-            <div className="row sideBar-body" >
-              <div className="col-sm-3 col-xs-3 sideBar-avatar">
-                <div className="avatar-icon">
-                   <button className="BtnPreguntas" data-key={element.usuario} onClick={ this.userSelected } >Select</button>
-                </div>
-              </div>
-              <div className="col-sm-9 col-xs-9 sideBar-main">
-                <div className="row">
-                  <div className="col-sm-8 col-xs-8 sideBar-name">
-                    <span className="name-meta">{element.usuario}
-                  </span>
-                  </div>
-                  <div className="col-sm-4 col-xs-4 pull-right sideBar-time">
-                    <span className="time-meta pull-right">
-                  </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <button className="BtnPreguntas" data-key={element.usuario} onClick={ this.userSelected } >{element.usuario}</button>
+            
+
 
         );
         }
@@ -187,7 +170,7 @@ var PanelDePreguntas  = React.createClass({
             <textarea className="form-control" rows="1" id="comment" value={this.state.respuesta}  onChange={ this.actualizarRespuesta }></textarea>            
           </div>
           <div className="col-sm-4 col-xs-4 reply-send">
-            <button className="BtnPreguntas" onClick={ this.realizarRespuesta } >Responder</button>
+            <button onClick={ this.realizarRespuesta } >Responder</button>
           </div>
         </div>   
         </div>             

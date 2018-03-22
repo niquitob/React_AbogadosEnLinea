@@ -1,5 +1,6 @@
 
 "use strict";
+
 var socket = null;
 var startSocket = function startSocket() {
   socket = io(window.location.hostname);
@@ -65,43 +66,9 @@ var ListadoUsuario = React.createClass({
     var listUs = users.map(function (element) {
       if (element.usuario) {
         return React.createElement(
-          'div',
-          { className: 'row sideBar-body' },
-          React.createElement(
-            'div',
-            { className: 'col-sm-3 col-xs-3 sideBar-avatar' },
-            React.createElement(
-              'div',
-              { className: 'avatar-icon' },
-              React.createElement(
-                'button',
-                { className: 'BtnPreguntas', 'data-key': element.usuario, onClick: this.userSelected },
-                'Select'
-              )
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'col-sm-9 col-xs-9 sideBar-main' },
-            React.createElement(
-              'div',
-              { className: 'row' },
-              React.createElement(
-                'div',
-                { className: 'col-sm-8 col-xs-8 sideBar-name' },
-                React.createElement(
-                  'span',
-                  { className: 'name-meta' },
-                  element.usuario
-                )
-              ),
-              React.createElement(
-                'div',
-                { className: 'col-sm-4 col-xs-4 pull-right sideBar-time' },
-                React.createElement('span', { className: 'time-meta pull-right' })
-              )
-            )
-          )
+          'button',
+          { className: 'BtnPreguntas', 'data-key': element.usuario, onClick: this.userSelected },
+          element.usuario
         );
       }
     }, this);
