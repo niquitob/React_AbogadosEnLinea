@@ -1,7 +1,4 @@
 
-// ******************************************
-//          Import configurations
-// ******************************************
    var config           = require('./config.json');
 // ******************************************
 //       Install NodeJS Dependencies
