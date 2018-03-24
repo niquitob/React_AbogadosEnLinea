@@ -9,7 +9,7 @@ var instance = undefined;
 var instanceConv = undefined;
 var downloadUsers = function downloadUsers() {
   $.ajax({
-    url: '/api/listUsers',
+    url: '/listUsers',
     dataType: 'json',
     success: function (data) {
       instance.setState({ simpleList: data });
@@ -22,7 +22,7 @@ var downloadUsers = function downloadUsers() {
 
 var downloadData = function downloadData() {
   $.ajax({
-    url: '/api/list',
+    url: '/list',
     type: 'post',
     data: { "usuario": sessionStorage.getItem('usuario') },
     success: function (data) {
@@ -94,7 +94,7 @@ var PanelDePreguntas = React.createClass({
   realizarRespuesta: function realizarRespuesta(evt) {
     this.setState({ respuesta: evt.target.value });
     $.ajax({
-      url: "/api/add",
+      url: "/add",
       type: "post",
       data: { "mensaje": this.state.respuesta, "usuario": sessionStorage.getItem('usuario'), "class": "self", "admin": sessionStorage.getItem('usuarioAdmin') }
     });

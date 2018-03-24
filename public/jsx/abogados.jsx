@@ -8,7 +8,7 @@ var instance               = this;
 var instanceConv = this;
 var downloadUsers           = function(){
    $.ajax({
-      url      : '/api/listUsers',
+      url      : '/listUsers',
       dataType : 'json',
       success  : function(data) {
          instance.setState({simpleList: data});
@@ -21,7 +21,7 @@ var downloadUsers           = function(){
 
 var downloadData           = function(){
    $.ajax({
-      url      : '/api/list',
+      url      : '/list',
       type: 'post',
       data: { "usuario": sessionStorage.getItem('usuario') },
       success  : function(data) {
@@ -93,7 +93,7 @@ var PanelDePreguntas  = React.createClass({
    realizarRespuesta(evt) {
       this.setState({respuesta:evt.target.value});
        $.ajax({
-                    url   : "/api/add",
+                    url   : "/add",
                     type  : "post",
                     data  : {"mensaje": this.state.respuesta, "usuario": sessionStorage.getItem('usuario'), "class": "self", "admin": sessionStorage.getItem('usuarioAdmin')}
                 });    

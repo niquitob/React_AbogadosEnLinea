@@ -1,4 +1,3 @@
-
 "use strict";
 
 var socket = null;
@@ -8,7 +7,7 @@ var startSocket = function startSocket() {
 var instance = undefined;
 var downloadData = function downloadData() {
    $.ajax({
-      url: '/api/list',
+      url: '/list',
       type: 'post',
       data: { "usuario": sessionStorage.getItem('usuario') },
       success: function (data) {
@@ -54,7 +53,7 @@ var CargaPreguntas = React.createClass({
       sessionStorage.setItem('usuario', "Invitado" + Math.floor(Math.random() * 100 + 1));
 
       $.ajax({
-         url: "/api/addUsuario",
+         url: "/addUsuario",
          type: "post",
          data: { "usuario": sessionStorage.getItem('usuario'), "tipoUsuario": "invitado", "estaActivo": "si" }
       });
@@ -71,13 +70,13 @@ var CargaPreguntas = React.createClass({
 
       if (sessionStorage.getItem('tipoUsuario') == "invitado") {
          $.ajax({
-            url: "/api/add",
+            url: "/add",
             type: "post",
             data: { "mensaje": this.state.pregunta, "usuario": sessionStorage.getItem('usuario'), "class": "other" }
          });
       } else {
          $.ajax({
-            url: "/api/add",
+            url: "/add",
             type: "post",
             data: { "mensaje": this.state.pregunta, "usuario": sessionStorage.getItem('usuario'), "class": "self" }
          });
@@ -225,7 +224,7 @@ var CargaPreguntasChat = React.createClass({
       sessionStorage.setItem('usuario', "Invitado" + Math.floor(Math.random() * 500 + 1));
 
       $.ajax({
-         url: "/api/addUsuario",
+         url: "/addUsuario",
          type: "post",
          data: { "usuario": sessionStorage.getItem('usuario'), "tipoUsuario": "invitado", "estaActivo": "si" }
       });
@@ -242,13 +241,13 @@ var CargaPreguntasChat = React.createClass({
 
       if (sessionStorage.getItem('tipoUsuario') == "invitado") {
          $.ajax({
-            url: "/api/add",
+            url: "/add",
             type: "post",
             data: { "mensaje": this.state.pregunta, "usuario": sessionStorage.getItem('usuario'), "class": "other" }
          });
       } else {
          $.ajax({
-            url: "/api/add",
+            url: "/add",
             type: "post",
             data: { "mensaje": this.state.pregunta, "usuario": sessionStorage.getItem('usuario'), "class": "self" }
          });
