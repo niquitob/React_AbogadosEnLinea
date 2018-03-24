@@ -177,6 +177,7 @@ var add                 = function(request, res, next) {
    });
 }
 
+
 //Crear usuarios
 var addUsuario                 = function(request, res, next) {
    var element          = request.body;
