@@ -66,9 +66,6 @@ var ListadoUsuario   = React.createClass({
         if (element.usuario){
         return (
             <button className="BtnPreguntas" data-key={element.usuario} onClick={ this.userSelected } >{element.usuario}</button>
-            
-
-
         );
         }
       },this);
@@ -149,13 +146,8 @@ var PanelDePreguntas  = React.createClass({
                 </span>
               </div>
             </div>
-          </div>
-                      
-                      
+          </div>                     
                       );
-        
-
-
                  }
                      
                }
@@ -195,7 +187,7 @@ var UsuarioOnline  = React.createClass({
         <div className="row" >
           <div className="col-sm-2 col-md-1 col-xs-3 heading-avatar">
             <div className="heading-avatar-icon">
-              <img src="http://shurl.esy.es/y" />
+              <img src="Images/usuario-sin-foto.png" />
             </div>
           </div>
           <div className="col-sm-8 col-xs-7 heading-name">

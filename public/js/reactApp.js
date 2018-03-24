@@ -94,11 +94,7 @@ var CargaPreguntas = React.createClass({
             'div',
             null,
             React.createElement('textarea', { className: 'CargarPreguntas', type: 'text', value: this.state.pregunta, onChange: this.actualizarPregunta }),
-            React.createElement(
-               'button',
-               { className: 'BtnPreguntas', onClick: this.realizarPregunta },
-               'Enviar'
-            ),
+            React.createElement('input', { type: 'Image', className: 'BtnPreguntas', onClick: this.realizarPregunta, src: 'Images/EnviarBtn.png' }),
             React.createElement('br', null)
          )
       );
@@ -114,6 +110,14 @@ var PanelDePreguntas = React.createClass({
          simpleList: [{ mensaje: "cargando..." }],
          tipoUsuario: sessionStorage.getItem('myData')
       };
+   },
+   componentDidMount: function componentDidMount() {
+      // startSocket();
+      // instance = this;
+      // downloadData();
+      // socket.on('change', function (data) {
+      //    downloadData();
+      // });
    },
    render: function render() {
       instance = this;
@@ -218,7 +222,7 @@ var CargaPreguntasChat = React.createClass({
       this.setState({ usuario: evt.target.value });
    },
    crearUsuarioInvitado: function crearUsuarioInvitado() {
-      sessionStorage.setItem('usuario', "Invitado" + Math.floor(Math.random() * 100 + 1));
+      sessionStorage.setItem('usuario', "Invitado" + Math.floor(Math.random() * 500 + 1));
 
       $.ajax({
          url: "/api/addUsuario",
@@ -258,8 +262,10 @@ var CargaPreguntasChat = React.createClass({
          width: '90%'
       };
       var estilo2 = {
-         width: '4%',
-         padding: '0 10px 0 0'
+         width: '3%',
+         padding: '0 0 0 2px',
+         'vertical-align': 'middle'
+
       };
       return React.createElement(
          'div',

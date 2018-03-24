@@ -575,7 +575,7 @@ body {
   }
   .reply-main textarea {
     padding: 8px !important;
-    font-size: 18px;
+    font-size: smaller;
   }
   .reply-recording {
     padding: 5px 0 !important;

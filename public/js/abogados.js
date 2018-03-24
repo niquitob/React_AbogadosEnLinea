@@ -193,7 +193,7 @@ var PanelDePreguntas = React.createClass({
           { className: 'col-sm-4 col-xs-4 reply-send' },
           React.createElement(
             'button',
-            { className: 'BtnPreguntas', onClick: this.realizarRespuesta },
+            { onClick: this.realizarRespuesta },
             'Responder'
           )
         )
@@ -224,7 +224,7 @@ var UsuarioOnline = React.createClass({
         React.createElement(
           'div',
           { className: 'heading-avatar-icon' },
-          React.createElement('img', { src: 'http://shurl.esy.es/y' })
+          React.createElement('img', { src: 'Images/usuario-sin-foto.png' })
         )
       ),
       React.createElement(

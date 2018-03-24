@@ -93,7 +93,7 @@ var CargaPreguntas   = React.createClass({
         
             <textarea className="CargarPreguntas" type="text" value={this.state.pregunta}  onChange={ this.actualizarPregunta } />
 
-            <button className="BtnPreguntas" onClick={ this.realizarPregunta } >Enviar</button><br/>
+            <input type="Image" className="BtnPreguntas" onClick={ this.realizarPregunta } src="Images/EnviarBtn.png" ></input><br/>
             </div>
          </div>
 
@@ -111,9 +111,17 @@ var PanelDePreguntas  = React.createClass({
          tipoUsuario : sessionStorage.getItem('myData'),
       };
    },
+   componentDidMount : function() {
+     // startSocket();
+     // instance = this;
+     // downloadData();
+     // socket.on('change', function (data) {
+     //    downloadData();
+     // });
+   },
    render: function() {
      instance=this;
-     downloadData();
+    downloadData();
       var informacion = this.state.simpleList;
       return (
         <div>
@@ -177,7 +185,7 @@ var CargaPreguntasChat   = React.createClass({
       this.setState({usuario:evt.target.value});    
   },
   crearUsuarioInvitado(){
-      sessionStorage.setItem('usuario', "Invitado"+Math.floor((Math.random() * 100) + 1) );
+      sessionStorage.setItem('usuario', "Invitado"+Math.floor((Math.random() * 500) + 1) );
       
         $.ajax({
                     url   : "/api/addUsuario",
@@ -219,8 +227,10 @@ var CargaPreguntasChat   = React.createClass({
         width:'90%'
         };
         var estilo2 = {
-        width: '4%',
-        padding: '0 10px 0 0'
+        width: '3%',
+        padding: '0 0 0 2px',
+        'vertical-align': 'middle'
+
         };
       return (
          <div>
