@@ -232,7 +232,6 @@ var CargaPreguntasChat = React.createClass({
    realizarPregunta: function realizarPregunta() {
       //this.setState({mostrarPregunta:mostrarPregunta + '<br/>' + pregunta});
       // this.setState({mostrarPregunta:this.state.mostrarPregunta + '\n\n' + this.state.pregunta});
-
       //sessionStorage.setItem('myData', this.state.mostrarPregunta );
       //sessionStorage.getItem('myData');
       if (sessionStorage.getItem('usuario') == "") {
